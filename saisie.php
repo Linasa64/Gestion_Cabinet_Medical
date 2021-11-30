@@ -16,7 +16,7 @@
         Adresse : <input type="text" name="Adresse" /><br />
         Code Postal : <input type="text" name="Code_postal" /><br />
         Ville : <input type="text" name="Ville" /><br />
-        Date de Naissance : <input type="text" name="Date_Naissance" /><br />
+        Date de Naissance : <input type="date" name="Date_Naissance" /><br />
         Ville de Naissance : <input type="text" name="Ville_Naissance" /><br />
         Numéro de sécurité sociale : <input type="text" name="Secu" /><br />
 
