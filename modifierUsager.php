@@ -42,6 +42,6 @@ if (isset($_GET["id_Usager"])) {
     // Modification
     $reqModif = $linkpdo->prepare('UPDATE usager SET Civilite = ?, Nom = ?, Prenom=?, Adresse=?, Code_postal=?, Ville=?, Date_Naissance=?, Ville_Naissance = ?, Secu = ? WHERE id_Usager=?');
     $reqModif->execute(array($_POST["Civilite"], $_POST["Nom"], $_POST["Prenom"], $_POST["Adresse"], $_POST["Code_postal"], $_POST["Ville"], $_POST["Date_Naissance"], $_POST["Ville_Naissance"], $_POST["Secu"], $_POST["id_Usager"]));
-    header('Location: modifierUsager.php?id_Usager=' . $_POST["id_Usager"]);
+    header('Location: rechercheUsager.php');
 }
 ?>
