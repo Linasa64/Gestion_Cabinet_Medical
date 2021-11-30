@@ -10,12 +10,12 @@
 
     <h1>Saisie d'un nouveau Médecin</h1>
     <form action="SaisieMedecin.php" method="post">
-        Civilité : <input type = text name="Civilite" /><br>
-        Nom : <input type="text" name="Nom"><br>
-        Prenom : <input type="text" name="Prenom" /><br>
+        <label for="Civilite"> Civilité :</label> <input type = text name="Civilite" id="Civilite" /><br>
+        <label for="Nom"> Nom : </label> <input type="text" name="Nom" id="Nom"><br>
+        <label for="Prenom"> Prenom : </label> <input type="text" name="Prenom" id="Prenom"/><br>
 
         <input type="submit" value="Ajout" name="ajout">
-        <input type="reset" value="Reset" name="reset">
+        <input type="reset" value="Reset" name="reset"> 
     </form>
 
     <?php
