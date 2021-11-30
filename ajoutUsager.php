@@ -23,9 +23,10 @@
     $Secu = $_POST['Secu'];
 
 
-    $requete = 'INSERT INTO carnet(Nom, Prenom, Adresse, Code_postal, Ville, Date_Naissance, Ville_Naissance, Secu) 
+    $requete = 'INSERT INTO usager(Civilite, Nom, Prenom, Adresse, Code_postal, Ville, Date_Naissance, Ville_Naissance, Secu) 
                 VALUES("'.$civilite.'", "'.$nom.'", "'.$prenom.'", "'.$adresse.'", "'.$cp.'", "'.$ville.'", "'.$Date_Naissance.'", "'.$Ville_Naissance.'", "'.$Secu.'")';
-    if (!empty($civilite) && !empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville) && !empty($Date_Naissance) && !empty($Date_Naissance) && !empty($Ville_Naissance) && !empty($Secu)){
+    echo $requete;
+    if (!empty($nom) && !empty($prenom) && !empty($Secu)){
         if(isset($_POST['Secu'])) {
             $result = mysqli_query($link, $requete);
         }
@@ -33,5 +34,4 @@
     else{
         print("oh nooooo");
     }
-    header('Location: index.php');
 ?>
