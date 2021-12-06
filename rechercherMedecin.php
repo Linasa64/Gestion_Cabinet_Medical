@@ -2,7 +2,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" <body>
 <div class="container">
     <h1>Recherche d'un medecin</h1>
-    <form action="recherche.php" method="get">
+    <form action="rechercherMedecin.php" method="get">
         <div class="mb-3">
             <label for="recherche" class="form-label">Saisissez le medecin à chercher :</label>
             <input type="text" id="recherche" name="recherche" class="form-control" value="<?php if (isset($_GET['recherche'])) echo $_GET["recherche"] ?>" />
