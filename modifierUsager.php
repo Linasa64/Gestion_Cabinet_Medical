@@ -1,17 +1,11 @@
 <?php
-///Connexion au serveur MySQL
-try {
-    $linkpdo = new PDO("mysql:host=localhost;dbname=gestcabmed", 'root');
-}
-///Capture des erreurs éventuelles
-catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+
+include 'resrc/Connect.php';
 
 if (isset($_GET["id_Usager"])) {
     $req = $linkpdo->prepare('SELECT * FROM usager WHERE id_Usager=?');
     $req->execute(array($_GET["id_Usager"]));
-    $usager = $req->fetch()
+    $usager = $req->fetch();
 ?>
 
     <html>

@@ -1,7 +1,7 @@
 <?php
 
     //Connexion au serveur MySQL
-    $link = mysqli_connect("localhost", "root", "root", "gestcabmed") or die("Error".mysqli_error($link));
+    $linkpdo = mysqli_connect("localhost", "root", "root", "gestcabmed") or die("Error".mysqli_error($linkpdo));
 
     //Vérification de la connexion
     if(mysqli_connect_errno()){
