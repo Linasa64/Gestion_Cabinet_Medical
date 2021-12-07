@@ -32,12 +32,13 @@
 
     <?php
     if (isset($_GET["id_Usager"])) {
-        $reqNomMedRef = $linkpdo->prepare('SELECT Nom, Prenom FROM medecin, referent WHERE id_Usager=? AND medecin.idMedecin');
+        $reqNomMedRef = $linkpdo->prepare('SELECT Nom, Prenom FROM medecin, referent WHERE id_Usager=? AND medecin.id_Medecin = referent.id_Medecin ');
         $reqNomMedRef->execute(array($_GET["id_Usager"]));
         $idMedRef = $reqNomMedRef->fetch();
+        
     }
     ?>
-    <?php echo $medRef[0]; ?>
+    <?php echo $idMedRef[0], ' ', $idMedRef[1]; ?>
     </br>
     Date du rendez-vous :
     <input type="date" id="start" name="dateRdv" value=<?php echo date('Y-m-d'); ?> min=<?php echo date('Y-m-d'); ?> max="<?php echo date('2100-12-31'); ?>">
