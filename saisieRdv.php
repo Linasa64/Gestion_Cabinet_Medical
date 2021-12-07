@@ -32,7 +32,7 @@
 
     <?php
     if (isset($_GET["id_Usager"])) {
-        $reqNomMedRef = $linkpdo->prepare('SELECT Nom, Prenom FROM medecin, referent WHERE id_Usager=?');
+        $reqNomMedRef = $linkpdo->prepare('SELECT Nom, Prenom FROM medecin, referent WHERE id_Usager=? AND medecin.idMedecin');
         $reqNomMedRef->execute(array($_GET["id_Usager"]));
         $idMedRef = $reqNomMedRef->fetch();
     }

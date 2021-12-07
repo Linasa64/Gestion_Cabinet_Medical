@@ -32,4 +32,4 @@ if (isset($_GET["id_Medecin"])) {
     $reqDel->execute(array($_POST["id_Medecin"]));
     header('Location: rechercheUsager.php');
 }
-?>
+?> 
