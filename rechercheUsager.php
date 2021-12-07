@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="fr">
+<html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" <body>
 <div class="container">
     <h1>Recherche d'un usager</h1>
@@ -14,7 +13,14 @@
 
     <?php
 
-    include 'resrc/Connect.php';
+    ///Connexion au serveur MySQL
+    try {
+        $linkpdo = new PDO("mysql:host=localhost;dbname=gestcabmed", 'root');
+    }
+    ///Capture des erreurs éventuelles
+    catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
 
     if (isset($_GET['recherche'])) {
         $recherche = $_GET['recherche'];
@@ -71,6 +77,7 @@
                     <td><?php echo $usager["Date_Naissance"] ?> </td>
                     <td><?php echo $usager["Ville_Naissance"] ?> </td>
                     <td><?php echo $usager["Secu"] ?> </td>
+                    <td> <a type="button" class="btn btn-outline-primary btn-sm" href="saisieRdv.php?id_Usager=<?php echo $usager["id_Usager"] ?>">Nouveau RDV</a>
                     <td> <a type="button" class="btn btn-outline-secondary btn-sm" href="modifierUsager.php?id_Usager=<?php echo $usager["id_Usager"] ?>">Modifier</a>
                     <td> <a type="button" class="btn btn-outline-danger btn-sm" href="suppressionUsager.php?id_Usager=<?php echo $usager["id_Usager"] ?>">Supprimer</a>
                 </tr>
@@ -86,4 +93,4 @@
 
 </html>
 
-</html>
+</html> 
