@@ -48,6 +48,11 @@
     </br>
     Durée du rendez-vous :
     <input type="time" name="dureeRdv" value="00:30" />
+    
+    </br>
+    
+    <button type="submit">Enregistrer</button>
+
 
 </body>
 
