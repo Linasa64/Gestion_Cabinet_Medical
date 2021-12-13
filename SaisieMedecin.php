@@ -9,7 +9,7 @@
 <body>
 
     <h1>Saisie d'un nouveau Médecin</h1>
-    <form action="SaisieMedecin.php" method="post">
+    <form action="SaisieMedecin.php" method="POST">
         <label for="Civilite"> Civilité :</label> <input type = text name="Civilite" id="Civilite" /><br>
         <label for="Nom"> Nom : </label> <input type="text" name="Nom" id="Nom"><br>
         <label for="Prenom"> Prenom : </label> <input type="text" name="Prenom" id="Prenom"/><br>
@@ -22,22 +22,23 @@
 
         include 'resrc/Connect.php';
         
-        //La requête
+        if( isset($_POST['Civilite']) && isset($_POST['Nom']) && isset($_POST['Prenom'])) {
+            //La requête
+            $civilite = $_POST['Civilite'];
+            $nom = $_POST['Nom'];
+            $prenom = $_POST['Prenom'];
 
-        $civilite = $_POST['Civilite'];
-        $nom = $_POST['Nom'];
-        $prenom = $_POST['Prenom'];
+            $requete = 'INSERT INTO medecin(Civilite, Nom, Prenom) 
+                        VALUES("'.$civilite.'", "'.$nom.'", "'.$prenom.'")';
+            if (!empty($civilite) && !empty($nom) && !empty($prenom)){
+                $result = mysqli_query($link, $requete);
+                header('Location: index.php');
+            }
+            else{
+                print("oh nooooo");
+            }
+        }
 
-        $requete = 'INSERT INTO medecin(Civilite, Nom, Prenom) 
-                    VALUES("'.$civilite.'", "'.$nom.'", "'.$prenom.'")';
-        if (!empty($civilite) && !empty($nom) && !empty($prenom)){
-            $result = mysqli_query($link, $requete);
-            header('Location: index.php');
-        }
-        else{
-            print("oh nooooo");
-        }
-    
     ?>
 
 </body>
