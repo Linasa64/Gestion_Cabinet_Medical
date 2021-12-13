@@ -11,7 +11,7 @@ if (isset($_GET["id_Medecin"])) {
     <html>
 
     <body>
-        <h1>Modification d'un usager</h1>
+        <h1>Modification d'un médecin</h1>
 
         <form action="modifierMedecin.php" method="post">
         Civilité : <input type = text name="Civilite" value="<?php echo $medecin["Civilite"] ?>"/><br/>

@@ -45,7 +45,6 @@
             $ville_Naissance = $_POST['Ville_Naissance'];
             $secu = $_POST['Secu'];
 
-
             $req = 'INSERT INTO usager(Civilite, Nom, Prenom, Adresse, Code_postal, Ville, Date_Naissance, Ville_Naissance, Secu) 
                         VALUES("'.$civilite.'", "'.$nom.'", "'.$prenom.'", "'.$adresse.'", "'.$cp.'", "'.$ville.'", "'.$date_Naissance.'", "'.$ville_Naissance.'", "'.$secu.'")';
             echo $req;

@@ -1,13 +1,11 @@
 <?php
 
     //Connexion au serveur MySQL
-    $linkpdo = mysqli_connect("localhost", "root", "", "gestcabmed") or die("Error".mysqli_error($linkpdo));
-
-    //Vérification de la connexion
-    if(mysqli_connect_errno()){
-        print("connect filed: \n".mysqli_connect_error());
-        exit();
+    try {
+        $linkpdo = new PDO("mysql:host=localhost;dbname=gestcabmed", 'root');
     }
-    print_r($_POST);
-
+    ///Capture des erreurs éventuelles
+    catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
  ?>
