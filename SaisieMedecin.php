@@ -20,7 +20,13 @@
 
     <?php
 
-        include 'resrc/Connect.php';
+        $link = mysqli_connect("localhost", "root", "", "gestcabmed") or die("Error".mysqli_error($link));
+
+        //Vérification de la connexion
+        if(mysqli_connect_errno()){
+            print("connect filed: \n".mysqli_connect_error());
+            exit();
+        }        
         
         if( isset($_POST['Civilite']) && isset($_POST['Nom']) && isset($_POST['Prenom'])) {
             //La requête
