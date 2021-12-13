@@ -5,7 +5,7 @@ include "resrc/Connect.php";
 if (isset($_GET["id_Medecin"])) {
     $req = $linkpdo->prepare('SELECT * FROM medecin WHERE id_Medecin=?');
     $req->execute(array($_GET["id_Medecin"]));
-    $usager = $req->fetch()
+    $medecin = $req->fetch()
 ?>
 
     <html>

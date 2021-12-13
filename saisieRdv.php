@@ -40,15 +40,17 @@
     ?>
     <?php echo $idMedRef[0], ' ', $idMedRef[1]; ?>
     </br>
-    Date du rendez-vous :
-    <input type="date" id="start" name="dateRdv" value=<?php echo date('Y-m-d'); ?> min=<?php echo date('Y-m-d'); ?> max="<?php echo date('2100-12-31'); ?>">
-    </br>
-    Heure du rendez-vous :
-    <input type="time" id="appt" name="heureRdv" min="08:00" max="20:00" required>
-    </br>
-    Durée du rendez-vous :
-    <input type="time" name="dureeRdv" value="00:30" />
-    
+    <form action="saisieRdv.php" method="post">
+        Date du rendez-vous :
+        <input type="date" id="start" name="dateRdv" value=<?php echo date('Y-m-d'); ?> min=<?php echo date('Y-m-d'); ?> max="<?php echo date('2100-12-31'); ?>">
+        </br>
+        Heure du rendez-vous :
+        <input type="time" id="appt" name="heureRdv" min="08:00" max="20:00" required>
+        </br>
+        Durée du rendez-vous :
+        <input type="time" name="dureeRdv" value="00:30" />
+    </form>
+
     </br>
     
     <button type="submit">Enregistrer</button>
