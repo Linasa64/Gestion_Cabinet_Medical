@@ -24,8 +24,6 @@ if (isset($_GET["id_Usager"])) {
         </form>
     </body>
 
-    </html>
-
 <?php
 } else if (isset($_POST["id_Usager"])) {
     $reqDel = $linkpdo->prepare('DELETE FROM usager WHERE id_Usager=?');
